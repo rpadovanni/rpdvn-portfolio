@@ -8,12 +8,13 @@
 		"build": "next lint --quiet && next build",
 		"start": "next start",
 		"lint": "next lint",
+		"lint:fix": "next lint ",
 		"prepare": "husky"
 	},
 	"lint-staged": {
-		"*.{js,jsx,json,md,ts,tsx}": [
-			"pretty-quick --staged",
-			"eslint --fix"
+		"**/*.{js,jsx,json,md,ts,tsx}": [
+			"yarn lint --fix .",
+			"yarn pretty-quick --staged"
 		]
 	},
 	"dependencies": {

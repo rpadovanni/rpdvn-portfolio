@@ -1,42 +1,23 @@
+'use client';
+
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import {
-	Menubar,
-	MenubarContent,
-	MenubarItem,
-	MenubarMenu,
-	MenubarSeparator,
-	MenubarShortcut,
-	MenubarTrigger,
-} from '@/components/ui/menubar';
-import { Switch } from '@/components/ui/switch';
+
+import FontSizing from './font-sizing';
+import MainMenu from './main-menu';
+import ThemeToggle from './theme-toggle';
 
 const MainHeader = () => {
 	return (
 		<section className="flex h-screen w-screen flex-col bg-gray-300 p-4">
-			<header className="flex w-full items-center justify-between bg-white p-4">
-				<div>
-					<Switch />
+			<header className="shadow-glass-shadow flex w-full items-center justify-between rounded-full border-white border-opacity-25 bg-white bg-opacity-30 px-6 py-4 backdrop-blur-lg backdrop-filter">
+				<div className="flex">
+					<ThemeToggle />
+					<FontSizing />
 				</div>
-				<div>fonte</div>
-				<div>
-					<Menubar>
-						<MenubarMenu>
-							<MenubarTrigger>File</MenubarTrigger>
-							<MenubarContent>
-								<MenubarItem>
-									New Tab <MenubarShortcut>⌘T</MenubarShortcut>
-								</MenubarItem>
-								<MenubarItem>New Window</MenubarItem>
-								<MenubarSeparator />
-								<MenubarItem>Share</MenubarItem>
-								<MenubarSeparator />
-								<MenubarItem>Print</MenubarItem>
-							</MenubarContent>
-						</MenubarMenu>
-					</Menubar>
-				</div>
+
+				<MainMenu />
 			</header>
 
 			<section className="flex h-full w-full flex-col items-center justify-evenly p-4 text-center">

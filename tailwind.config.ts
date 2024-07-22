@@ -18,7 +18,19 @@ const config = {
 				'2xl': '1400px',
 			},
 		},
+		borderWidth: {
+			DEFAULT: '1px',
+			'0': '0',
+			'2': '2px',
+			'3': '3px',
+			'4': '4px',
+			'6': '6px',
+			'8': '8px',
+		},
 		extend: {
+			boxShadow: {
+				'glass-shadow': '0 4px 30px rgba(0, 0, 0, 0.1)',
+			},
 			fontFamily: {
 				sans: ['var(--font-sans)', ...fontFamily.sans],
 			},

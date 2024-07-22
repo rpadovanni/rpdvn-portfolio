@@ -8,8 +8,9 @@
 		"build": "next lint --quiet && next build",
 		"start": "next start",
 		"lint": "next lint",
-		"lint:fix": "next lint ",
-		"prepare": "husky"
+		"lint:fix": "next lint --fix",
+		"prepare": "husky",
+		"prettify": "prettier --write \"src/app/**/*.{js,jsx,ts,tsx,css,html,json}\""
 	},
 	"lint-staged": {
 		"**/*.{js,jsx,json,md,ts,tsx}": [
@@ -39,7 +40,7 @@
 		"@types/react-dom": "^18",
 		"@typescript-eslint/eslint-plugin": "^7.11.0",
 		"autoprefixer": "^10.4.19",
-		"eslint": "^9",
+		"eslint": "^8",
 		"eslint-config-next": "^14.2.3",
 		"eslint-config-prettier": "^9.1.0",
 		"eslint-plugin-prettier": "^5.1.3",
@@ -50,6 +51,6 @@
 		"prettier-plugin-tailwindcss": "^0.6.5",
 		"pretty-quick": "^4.0.0",
 		"tailwindcss": "^3.4.6",
-		"typescript": "^5"
+		"typescript": "5.4.5"
 	}
 }

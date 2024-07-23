@@ -1,12 +1,16 @@
 import About from '@/components/about';
 import Footer from '@/components/footer';
-import MainHeader from '@/components/main-header';
+import MainHeader from '@/components/header/main-header';
+import Hero from '@/components/hero';
 import Portfolio from '@/components/portfolio';
 
 const Home = () => {
 	return (
 		<main className="flex-col justify-center">
-			<MainHeader />
+			<Hero>
+				<MainHeader />
+			</Hero>
+
 			<Portfolio />
 			<About />
 			<Footer />

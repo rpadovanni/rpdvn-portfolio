@@ -1,7 +1,7 @@
 'use client';
 
 import { AArrowDownIcon, AArrowUpIcon } from 'lucide-react';
-import { Button } from './ui/button';
+import { Button } from '@/components/ui/button';
 
 const FontSizing = () => {
 	return (

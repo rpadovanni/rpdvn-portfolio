@@ -1,5 +1,6 @@
-import { useMemo } from 'react';
+'use client';
 
+import { useMemo } from 'react';
 import { MailIcon, MessageCircleMore } from 'lucide-react';
 import {
 	Cross1Icon,

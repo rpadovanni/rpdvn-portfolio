@@ -1,6 +1,6 @@
 const Footer = () => {
 	return (
-		<footer className="flex justify-center text-pretty border-t-2 border-black bg-slate-400 p-2 text-sm font-semibold text-black">
+		<footer className="flex w-full justify-center rounded-tl-full rounded-tr-full border-white border-opacity-40 bg-gray-300 bg-opacity-30 px-6 py-4 shadow-glass-shadow backdrop-blur-lg backdrop-filter">
 			<p>
 				<span>&copy; 2024</span>
 				<span className="mx-2">-</span>

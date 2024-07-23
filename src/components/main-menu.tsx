@@ -32,7 +32,7 @@ const MainMenu = () => {
 					<HamburgerMenuIcon className="h-6 w-6" />
 				</DrawerTrigger>
 
-				<DrawerContent className="shadow-glass-shadow w-60 flex-col items-center rounded-l-full rounded-tl-full border-white border-opacity-25 bg-white bg-opacity-30 backdrop-blur-lg backdrop-filter">
+				<DrawerContent className="w-60 flex-col items-center rounded-l-full rounded-tl-full border-white border-opacity-25 bg-white bg-opacity-30 shadow-glass-shadow backdrop-blur-lg backdrop-filter">
 					<header className="flex w-full justify-end pr-4 pt-6">
 						<DrawerClose>
 							<Cross1Icon className="h-7 w-7" />

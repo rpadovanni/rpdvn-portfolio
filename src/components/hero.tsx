@@ -10,10 +10,10 @@ type THeroProps = {
 
 const Hero = ({ children }: THeroProps) => {
 	return (
-		<section className="flex h-screen w-screen flex-col bg-white p-4">
+		<section className="background-lighten-effect flex h-full w-full flex-col p-4">
 			{children}
 
-			<section className="flex h-full w-full flex-col items-center justify-evenly p-4 py-8 text-center">
+			<section className="flex h-[calc(100vh_-_11rem)] w-full flex-col items-center justify-evenly p-4 py-8 text-center">
 				<div className="rounded-full border-white bg-white bg-opacity-30 p-2 shadow-glass-shadow backdrop-blur-lg backdrop-filter">
 					<Avatar className="h-32 w-32 shadow-glass-shadow">
 						<AvatarImage src="https://avatars.githubusercontent.com/u/8856492?v=4" />
@@ -39,7 +39,7 @@ const Hero = ({ children }: THeroProps) => {
 						<Input
 							name="email"
 							type="email"
-							className="bg-white"
+							className="border-gray-600 bg-white font-semibold text-black"
 							value="rafael.pdvn@gmail.com"
 							disabled
 						/>

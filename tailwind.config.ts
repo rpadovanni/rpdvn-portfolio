@@ -29,7 +29,7 @@ const config = {
 		},
 		extend: {
 			boxShadow: {
-				'glass-shadow': '0 6px 30px rgba(0, 0, 0, 0.1)',
+				'glass-shadow': '0 4px 30px rgba(0, 0, 0, 0.1)',
 			},
 			fontFamily: {
 				sans: ['var(--font-sans)', ...fontFamily.sans],

@@ -1,8 +1,7 @@
-import { CopyIcon, DoubleArrowDownIcon, PaperPlaneIcon } from '@radix-ui/react-icons';
+import { DoubleArrowDownIcon } from '@radix-ui/react-icons';
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
+import EmailActions from './hero/email-actions';
 
 type THeroProps = {
 	children: React.ReactNode;
@@ -30,39 +29,7 @@ const Hero = ({ children }: THeroProps) => {
 					Let's talk your next project?
 				</section>
 
-				<section className="mt-10">
-					<label htmlFor="email" className="text-sm font-light">
-						copy my email / send me an email.
-					</label>
-
-					<div className="my-2 flex w-full max-w-sm items-center space-x-2">
-						<Input
-							name="email"
-							type="email"
-							className="border-gray-600 bg-white font-semibold text-black"
-							value="rafael.pdvn@gmail.com"
-							disabled
-						/>
-
-						<aside className="flex space-x-1">
-							<Button
-								title="Copy email"
-								className="bg-yellow-500 text-black"
-								type="button"
-							>
-								<CopyIcon className="h-4 w-4" />
-							</Button>
-
-							<Button
-								title="Send email"
-								type="button"
-								className="bg-yellow-500 text-black"
-							>
-								<PaperPlaneIcon className="h-4 w-4" />
-							</Button>
-						</aside>
-					</div>
-				</section>
+				<EmailActions />
 			</section>
 
 			<p className="flex w-full animate-pulse-down items-center justify-center opacity-50">

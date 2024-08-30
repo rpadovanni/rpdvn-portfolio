@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { MailIcon, MessageCircleMore } from 'lucide-react';
 import {
 	Cross1Icon,
@@ -24,7 +24,23 @@ import {
 import { useMediaQuery } from '@/hooks/use-media-query';
 
 const MainMenu = () => {
+	const [isScrollingUp, setIsScrollingUp] = useState(false);
+	const previousScrollY = useRef(0);
 	const isDesktop = useMediaQuery('(min-width: 768px)');
+
+	useEffect(() => {
+		const handleScroll = () => {
+			const currentScrollY = window.scrollY;
+			setIsScrollingUp(currentScrollY < previousScrollY.current);
+			previousScrollY.current = currentScrollY;
+		};
+
+		window.addEventListener('scroll', handleScroll);
+
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+		};
+	}, []);
 
 	const renderMobileMenu = useMemo(
 		() => (
@@ -91,7 +107,7 @@ const MainMenu = () => {
 		[],
 	);
 
-	return isDesktop ? renderDesktopMenu : renderMobileMenu;
+	return <nav className="">{isDesktop ? renderDesktopMenu : renderMobileMenu}</nav>;
 };
 
 export default MainMenu;

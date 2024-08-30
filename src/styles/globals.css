@@ -4,8 +4,8 @@
 
 @layer utilities {
 	.background-lighten-effect {
-		background-image: linear-gradient(to right, #f7ca77, #ffe7c9),
-			linear-gradient(to bottom, #c4f3fa, #c9a7f1);
+		background-image: linear-gradient(to right, #22b0f2, #cbcbcb),
+			linear-gradient(to bottom, #22b0f2, #000000);
 		background-blend-mode: lighten;
 	}
 }

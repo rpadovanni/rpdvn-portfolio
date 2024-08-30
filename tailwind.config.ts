@@ -28,6 +28,10 @@ const config = {
 			'8': '8px',
 		},
 		extend: {
+			backgroundImage: {
+				'project-image': "url('/project-bg.svg')",
+				'footer-texture': "url('/img/footer-texture.png')",
+			},
 			boxShadow: {
 				'glass-shadow': '0 4px 30px rgba(0, 0, 0, 0.1)',
 			},

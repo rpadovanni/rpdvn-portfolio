@@ -9,7 +9,7 @@ type THeroProps = {
 
 const Hero = ({ children }: THeroProps) => {
 	return (
-		<section className="background-lighten-effect flex h-full w-full flex-col p-4">
+		<section className="background-lighten-effect flex h-full w-full flex-col p-4 pt-20">
 			{children}
 
 			<section className="flex h-[calc(100vh_-_11rem)] w-full flex-col items-center justify-evenly p-4 py-8 text-center">
@@ -21,7 +21,7 @@ const Hero = ({ children }: THeroProps) => {
 				</div>
 
 				<section className="text-lg font-semibold text-gray-800">
-					<h1 className="text-2xl text-yellow-600">
+					<h1 className="text-2xl text-[#F0F03E]">
 						Hi, I'm Rafael, a <br /> Senior Frontend Engineer{' '}
 					</h1>
 					crafting modern, user-friendly and performant web applications.

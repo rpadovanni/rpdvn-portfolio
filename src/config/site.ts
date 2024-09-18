@@ -1,7 +1,7 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: 'Next.js',
+  name: 'Rafael Padovani | Senior Frontend Engineer',
   description:
     'Beautifully designed components that you can copy and paste into your apps. Accessible. Customizable. Open Source.',
   mainNav: [
@@ -11,8 +11,9 @@ export const siteConfig = {
     },
   ],
   links: {
-    twitter: 'https://twitter.com/shadcn',
-    github: 'https://github.com/shadcn/ui',
-    docs: 'https://ui.shadcn.com',
+    github: 'https://github.com/rpadovanni',
+    projects: 'https://www.linkedin.com/in/rpadovanni/details/projects/',
+    linkedin: 'https://www.linkedin.com/in/rpadovanni/',
+    email: 'rafael.pdvn@gmail.com',
   },
 };

@@ -5,7 +5,7 @@ interface Props {
 
 const ContentBlock = ({ alignment, children }: Props) => {
   return (
-    <div className="light:border-zinc-200 flex h-full w-full items-center border-b-2 dark:border-zinc-800">
+    <div className="light:border-zinc-200 flex h-full w-full items-center">
       <div className={`container flex flex-col items-${alignment || 'start'}`}>{children}</div>
     </div>
   );

@@ -145,3 +145,7 @@ html {
   height: 100%;
   scroll-behavior: smooth;
 }
+
+body {
+  @apply transition-colors duration-500;
+}

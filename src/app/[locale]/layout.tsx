@@ -1,5 +1,6 @@
-import type { Metadata, Viewport } from 'next';
+import i18nConfig from '@/i18n-config';
 import initTranslations from '../i18n';
+import type { Metadata, Viewport } from 'next';
 
 import { cn } from '@/lib/utils';
 import '@/styles/globals.css';
@@ -31,6 +32,10 @@ export const viewport: Viewport = {
 };
 
 const i18nNamespaces = ['home'];
+
+export function generateStaticParams() {
+  return i18nConfig.locales.map(locale => ({ locale }));
+}
 
 export default async function RootLayout({
   children,

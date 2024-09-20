@@ -5,11 +5,10 @@ import Link from 'next/link';
 import { buttonVariants } from '@/components/ui/button';
 import { Icons } from '@/components/layout/icons';
 import { siteConfig } from '@/config/site';
+import { useTranslation } from 'react-i18next';
 import ContentBlock from '@/components/layout/content-block';
 import Image from 'next/image';
-import dynamic from 'next/dynamic';
-import { useTranslation } from 'react-i18next';
-const Logo = dynamic(() => import('@/components/logo'));
+import Logo from '@/components/logo';
 
 export default function Home() {
   const { t } = useTranslation();

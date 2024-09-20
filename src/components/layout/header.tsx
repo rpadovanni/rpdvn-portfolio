@@ -6,6 +6,7 @@ import { siteConfig } from '@/config/site';
 import { buttonVariants } from '@/components/ui/button';
 import { Icons } from '@/components/layout/icons';
 import { ThemeToggle } from '@/components/layout/theme-toggle';
+import LanguageToggle from './language-toggle';
 
 export function SiteHeader({}) {
   return (
@@ -26,6 +27,8 @@ export function SiteHeader({}) {
             </Link>
 
             <ThemeToggle />
+
+            <LanguageToggle />
           </nav>
         </div>
       </div>

@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import initTranslations from './i18n';
+import initTranslations from '../i18n';
 
 import { cn } from '@/lib/utils';
 import '@/styles/globals.css';

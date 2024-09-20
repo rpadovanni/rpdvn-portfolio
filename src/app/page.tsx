@@ -2,13 +2,13 @@
 
 import Link from 'next/link';
 
-const Logo = dynamic(() => import('@/components/logo'), { ssr: false });
 import { buttonVariants } from '@/components/ui/button';
 import { Icons } from '@/components/layout/icons';
 import { siteConfig } from '@/config/site';
 import ContentBlock from '@/components/layout/content-block';
-import dynamic from 'next/dynamic';
 import Image from 'next/image';
+import dynamic from 'next/dynamic';
+const Logo = dynamic(() => import('@/components/logo'));
 
 export default function Home() {
   /* Render */
@@ -18,7 +18,7 @@ export default function Home() {
       <div
         className="order-1 h-full bg-gradient-to-br bg-contain md:h-2/3"
         style={{
-          backgroundImage: 'url("./website-bg-transparent.webp")',
+          backgroundImage: 'url("./website-bg-transparent.png")',
           position: 'relative',
         }}
       >

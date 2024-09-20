@@ -42,9 +42,7 @@ export default function RootLayout({
       <body
         className={cn('relative flex h-screen w-full font-sans antialiased', fontSans.variable)}
       >
-        {/* <body className={cn('flex h-full w-full  justify-center items-center', inter.className)}> */}
-
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <ThemeProvider attribute="class" defaultTheme="dark">
           <div className="relative flex flex-1 flex-col">
             <SiteHeader />
             <div className="flex-1">{children}</div>

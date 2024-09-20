@@ -10,8 +10,8 @@ import { ThemeToggle } from '@/components/layout/theme-toggle';
 export function SiteHeader({}) {
   return (
     <header className="bg-background fixed top-0 z-40 w-full">
-      <div className="container my-8 flex h-16 items-center space-x-4">
-        <div className="flex flex-1 flex-col items-center justify-center">
+      <div className="container flex h-16 items-center space-x-4 md:my-8">
+        <div className="flex flex-1 flex-col items-end justify-center md:items-center">
           <nav className="mt-3 flex items-center space-x-1 rounded-full bg-[#F0D695] px-8 py-1">
             <Link href={siteConfig.links.github} target="_blank" rel="noreferrer">
               <div

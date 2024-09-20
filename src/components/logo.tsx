@@ -7,7 +7,7 @@ interface Props {
   t: (key: string) => string;
 }
 
-const Logo = async ({ t }: Props) => {
+const Logo = ({ t }: Props) => {
   /* Hooks */
   const { theme } = useTheme();
 

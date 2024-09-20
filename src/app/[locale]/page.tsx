@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import initTranslations from '../i18n';
 
 import { buttonVariants } from '@/components/ui/button';
 import { Icons } from '@/components/layout/icons';
@@ -9,10 +8,11 @@ import { siteConfig } from '@/config/site';
 import ContentBlock from '@/components/layout/content-block';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
+import { useTranslation } from 'react-i18next';
 const Logo = dynamic(() => import('@/components/logo'));
 
-export default async function Home({ params: { locale } }: { params: { locale: string } }) {
-  const { t } = await initTranslations(locale, ['home']);
+export default function Home() {
+  const { t } = useTranslation();
 
   /* Render */
   return (
@@ -36,7 +36,7 @@ export default async function Home({ params: { locale } }: { params: { locale: s
                 <div className="order-1 my-10 flex items-end justify-end text-right md:text-left">
                   <p className="text-muted-foreground max-w-[700px] text-2xl font-semibold md:text-3xl">
                     {t('text-block-start')}{' '}
-                    <span className="text-[#DAAB03] dark:text-[#F0D695]">Rafael </span>! <br />{' '}
+                    <span className="text-[#DAAB03] dark:text-[#F0D695]">Rafael</span>! <br />{' '}
                     {`${t('role-prefix')} `}
                     <span className="text-[#DAAB03] dark:text-[#FFCE00]">{t('role')}</span>
                     <br />

@@ -2,12 +2,13 @@
 
 import Link from 'next/link';
 
-import { siteConfig } from '@/config/site';
+const Logo = dynamic(() => import('@/components/logo'), { ssr: false });
 import { buttonVariants } from '@/components/ui/button';
-import ContentBlock from '@/components/layout/content-block';
-import Image from 'next/image';
 import { Icons } from '@/components/layout/icons';
-import Logo from '@/components/logo';
+import { siteConfig } from '@/config/site';
+import ContentBlock from '@/components/layout/content-block';
+import dynamic from 'next/dynamic';
+import Image from 'next/image';
 
 export default function Home() {
   /* Render */
@@ -17,7 +18,7 @@ export default function Home() {
       <div
         className="order-1 h-full bg-gradient-to-br bg-contain md:h-2/3"
         style={{
-          backgroundImage: 'url("./website-bg-transparent.png")',
+          backgroundImage: 'url("./website-bg-transparent.webp")',
           position: 'relative',
         }}
       >
@@ -70,7 +71,7 @@ export default function Home() {
                   height={240}
                   style={{ objectFit: 'contain' }}
                   alt="A picture showing Rafael Padovani's face"
-                  src="https://avatars.githubusercontent.com/u/8856492?v=4"
+                  src="/foto-perfil.webp"
                   className="rounded-full border-6 border-[#DAAB03] object-cover shadow-border-light dark:border-[#F0D695] dark:shadow-border-dark"
                 />
               </div>

@@ -3,7 +3,11 @@
 import { useTheme } from 'next-themes';
 import Image from 'next/image';
 
-const Logo = () => {
+interface Props {
+  t: (key: string) => string;
+}
+
+const Logo = async ({ t }: Props) => {
   /* Hooks */
   const { theme } = useTheme();
 

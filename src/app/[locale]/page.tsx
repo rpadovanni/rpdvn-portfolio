@@ -18,13 +18,13 @@ export default function Home() {
     <section className="flex h-screen flex-col">
       {/* Main Content */}
       <div
-        className="order-1 h-full bg-gradient-to-br bg-contain md:h-2/3"
+        className="relative order-1 h-full bg-gradient-to-br bg-contain md:h-2/3"
         style={{
           backgroundImage: 'url("/website-bg-transparent.webp")',
           position: 'relative',
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-[#F4EDDB] from-15% via-[#F4EDDB]/60 via-70% to-[#F4EDDB]/50 dark:from-[#222222] dark:via-[#292929]/85 dark:to-[#292929]/50">
+        <div className="inset-0 bg-gradient-to-b from-[#F4EDDB] from-15% via-[#F4EDDB]/60 via-70% to-[#F4EDDB]/50 dark:from-[#222222] dark:via-[#292929]/85 dark:to-[#292929]/50 md:absolute">
           <ContentBlock>
             <div className="flex flex-col items-end justify-center md:flex-row md:items-center">
               <div className="order-2 flex flex-col items-end md:order-1 md:items-start">
@@ -82,7 +82,7 @@ export default function Home() {
       </div>
 
       {/* CTA */}
-      <div className="order-2 h-1/3 bg-[#FFCE00] text-[#292929]">
+      <div className="order-2 min-h-48 bg-[#FFCE00] text-[#292929] md:h-1/3">
         <ContentBlock alignment="center">
           <span className="text-sm">{t('cta-message')}</span>
           <h1 className="text-center text-3xl font-extrabold leading-tight tracking-tighter md:text-4xl">

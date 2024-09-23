@@ -1,6 +1,7 @@
 import i18nConfig from '@/i18n-config';
 import initTranslations from '../i18n';
 import type { Metadata, Viewport } from 'next';
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 import { cn } from '@/lib/utils';
 import '@/styles/globals.css';
@@ -63,6 +64,8 @@ export default async function RootLayout({
           <TailwindIndicator />
         </ThemeProvider>
       </body>
+
+      <GoogleAnalytics gaId="G-CGM22RJG8V" />
     </html>
   );
 }

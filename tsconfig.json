@@ -4,6 +4,8 @@
   "exclude": ["dist"],
   "compilerOptions": {
     "baseUrl": ".",
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
     "verbatimModuleSyntax": true,
     "paths": {
       "@components/*": ["src/components/*"],

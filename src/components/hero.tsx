@@ -1,40 +1,51 @@
-import { DoubleArrowDownIcon } from '@radix-ui/react-icons';
+'use client';
 
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import EmailActions from './hero/email-actions';
+import { useTranslation } from 'react-i18next';
 
-type THeroProps = {
-  children: React.ReactNode;
-};
+import CubeWall from '@/components/cube-wall';
+import { siteConfig } from '@/config/site';
 
-const Hero = ({ children }: THeroProps) => {
+const Hero = () => {
+  const { t } = useTranslation('site');
+
+  /* Render */
   return (
-    <section className="background-lighten-effect flex h-full w-full flex-col p-4 pt-20">
-      {children}
+    <section className="overflow-hidden bg-ground">
+      <div className="container grid items-center gap-x-8 gap-y-6 pb-16 pt-2 lg:grid-cols-2 lg:pb-24 lg:pt-8">
+        <div className="order-2 lg:order-1">
+          <h1 className="text-[13.5vw] font-black leading-[0.92] tracking-[-0.02em] text-action [font-stretch:115%] sm:text-[5.25rem] lg:text-[5.9vw] 2xl:text-[5.75rem]">
+            Rafael
+            <br />
+            Padovani
+          </h1>
 
-      <section className="flex h-[calc(100vh_-_11rem)] w-full flex-col items-center justify-evenly p-4 py-8 text-center">
-        <div className="rounded-full border-white bg-white bg-opacity-30 p-2 shadow-glass-shadow backdrop-blur-lg backdrop-filter">
-          <Avatar className="h-32 w-32 shadow-glass-shadow">
-            <AvatarImage src="https://avatars.githubusercontent.com/u/8856492?v=4" />
-            <AvatarFallback>Loading picture...</AvatarFallback>
-          </Avatar>
+          <p className="mt-8 max-w-[33rem] text-xl leading-[1.5] md:text-[1.375rem]">
+            {t('hero-statement')}
+          </p>
+          <p className="mt-3 text-ink-soft">{t('hero-location')}</p>
+
+          <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
+            <a
+              href={siteConfig.links.cv}
+              download
+              className="inline-flex h-12 items-center bg-action px-6 font-semibold text-action-ink hover:bg-black dark:hover:bg-[#DAAB03]"
+            >
+              {t('download-cv')}
+            </a>
+            <a
+              href="#contact"
+              className="font-semibold underline decoration-2 underline-offset-[6px] hover:decoration-4"
+            >
+              {t('write-to-me')}
+            </a>
+          </div>
         </div>
 
-        <section className="text-lg font-semibold text-gray-800">
-          <h1 className="text-2xl text-[#F0F03E]">
-            Hi, I'm Rafael, a <br /> Senior Frontend Engineer{' '}
-          </h1>
-          crafting modern, user-friendly and performant web applications.
-          <br />
-          Let's talk your next project?
-        </section>
-
-        <EmailActions />
-      </section>
-
-      <p className="flex w-full animate-pulse-down items-center justify-center opacity-50">
-        <DoubleArrowDownIcon className="h-6 w-6" />
-      </p>
+        <CubeWall
+          alt={t('picture-alt')}
+          className="order-1 w-[calc(100%+2rem)] max-w-none sm:-mr-8 sm:ml-auto sm:w-[34rem] lg:order-2 lg:mx-0 lg:w-[calc(50vw+1.5rem)] lg:max-w-[54rem]"
+        />
+      </div>
     </section>
   );
 };

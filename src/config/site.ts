@@ -3,7 +3,7 @@ export type SiteConfig = typeof siteConfig;
 export const siteConfig = {
   name: 'Rafael Padovani | Senior Frontend Engineer',
   description:
-    'Beautifully designed components that you can copy and paste into your apps. Accessible. Customizable. Open Source.',
+    'Senior front-end engineer in São Paulo. More than twelve years building, modernizing, and scaling web apps with React, Next.js, and TypeScript.',
   mainNav: [
     {
       title: 'Home',
@@ -14,6 +14,7 @@ export const siteConfig = {
     github: 'https://github.com/rpadovanni',
     projects: 'https://www.linkedin.com/in/rpadovanni/details/projects/',
     linkedin: 'https://www.linkedin.com/in/rpadovanni/',
-    email: 'rafael.pdvn@gmail.com',
+    email: 'r.padovanni@hotmail.com',
+    cv: '/cv-rafael-padovani-220926.pdf',
   },
 };

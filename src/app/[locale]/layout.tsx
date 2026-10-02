@@ -27,12 +27,12 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: 'white' },
-    { media: '(prefers-color-scheme: dark)', color: 'black' },
+    { media: '(prefers-color-scheme: light)', color: '#FFCE00' },
+    { media: '(prefers-color-scheme: dark)', color: '#292929' },
   ],
 };
 
-const i18nNamespaces = ['home'];
+const i18nNamespaces = ['home', 'site'];
 
 export function generateStaticParams() {
   return i18nConfig.locales.map(locale => ({ locale }));
@@ -48,18 +48,14 @@ export default async function RootLayout({
   const { resources } = await initTranslations(locale, i18nNamespaces);
 
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <head />
 
-      <body
-        className={cn('relative flex h-screen w-full font-sans antialiased', fontSans.variable)}
-      >
+      <body className={cn('font-sans antialiased', fontSans.variable)}>
         <ThemeProvider attribute="class" defaultTheme="dark">
           <TranslationProvider namespaces={i18nNamespaces} locale={locale} resources={resources}>
-            <div className="relative flex flex-1 flex-col">
-              <SiteHeader />
-              <div className="flex-1">{children}</div>
-            </div>
+            <SiteHeader />
+            {children}
           </TranslationProvider>
           <TailwindIndicator />
         </ThemeProvider>

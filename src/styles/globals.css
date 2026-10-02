@@ -29,9 +29,36 @@
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
+
+    /* Brand: yellow ground, charcoal ink */
+    --ground: #ffce00;
+    --surface: #ffffff;
+    --ink: #292929;
+    --ink-soft: #4a4433;
+    --rule: rgb(41 41 41 / 0.22);
+    --action: #292929;
+    --action-ink: #ffce00;
+    --band: #292929;
+    --band-ink: #ffce00;
+    --cube-lit: #ffffff;
+    --cube-shade: #e6b400;
+    --cube-line: #292929;
   }
 
   .dark {
+    --ground: #292929;
+    --surface: #222222;
+    --ink: #ffffff;
+    --ink-soft: #f0d695;
+    --rule: rgb(240 214 149 / 0.25);
+    --action: #ffce00;
+    --action-ink: #292929;
+    --band: #ffce00;
+    --band-ink: #292929;
+    --cube-lit: #ffce00;
+    --cube-shade: #292929;
+    --cube-line: rgb(255 206 0 / 0.6);
+
     --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;
     --card: 240 10% 3.9%;
@@ -147,5 +174,19 @@ html {
 }
 
 body {
-  @apply transition-colors duration-500;
+  background: var(--surface);
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+/* Cube wall: each face mixes between shade and lit by its --b (0 to 1) */
+.cube-face {
+  fill: color-mix(in oklab, var(--cube-lit) calc(var(--b) * 100%), var(--cube-shade));
+  stroke: var(--cube-line);
+  stroke-width: 1.25;
+  stroke-linejoin: round;
 }

@@ -1,35 +1,37 @@
 'use client';
 
-import Link from 'next/link';
+import { useTranslation } from 'react-i18next';
 
-import { siteConfig } from '@/config/site';
-import { buttonVariants } from '@/components/ui/button';
-import { Icons } from '@/components/layout/icons';
+import Logo from '@/components/logo';
 import { ThemeToggle } from '@/components/layout/theme-toggle';
 import LanguageToggle from './language-toggle';
 
+const sections = ['experience', 'toolkit', 'contact'];
+
 export function SiteHeader({}) {
+  const { t } = useTranslation('site');
+
   return (
-    <header className="bg-background fixed top-0 z-40 w-full">
-      <div className="container flex h-16 items-center space-x-4 md:my-8">
-        <div className="flex flex-1 flex-col items-end justify-center md:items-center">
-          <nav className="mt-3 flex items-center space-x-1 rounded-full bg-[#F0D695] px-8 py-1">
-            <Link href={siteConfig.links.github} target="_blank" rel="noreferrer">
-              <div
-                className={buttonVariants({
-                  size: 'icon',
-                  variant: 'ghost',
-                })}
+    <header className="bg-ground">
+      <div className="container flex h-20 items-center justify-between gap-6">
+        <Logo />
+
+        <div className="flex items-center gap-6">
+          <nav aria-label={t('nav-label')} className="hidden items-center gap-6 md:flex">
+            {sections.map(section => (
+              <a
+                key={section}
+                href={`#${section}`}
+                className="underline-offset-[6px] hover:underline hover:decoration-2"
               >
-                <Icons.gitHub className="h-5 w-5" />
-                <span className="sr-only">GitHub</span>
-              </div>
-            </Link>
-
-            <ThemeToggle />
-
-            <LanguageToggle />
+                {t(`nav-${section}`)}
+              </a>
+            ))}
           </nav>
+
+          <LanguageToggle />
+
+          <ThemeToggle />
         </div>
       </div>
     </header>

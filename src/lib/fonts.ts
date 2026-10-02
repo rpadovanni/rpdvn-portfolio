@@ -1,11 +1,7 @@
-import { JetBrains_Mono as FontMono, Inter as FontSans } from 'next/font/google';
+import { Archivo as FontSans } from 'next/font/google';
 
 export const fontSans = FontSans({
   subsets: ['latin'],
+  axes: ['wdth'],
   variable: '--font-sans',
-});
-
-export const fontMono = FontMono({
-  subsets: ['latin'],
-  variable: '--font-mono',
 });

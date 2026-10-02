@@ -3,20 +3,22 @@
 import i18nConfig from '@/i18n-config';
 
 // COMPONENTS
-import { Button } from '@/components/ui/button';
 import { Icons } from './icons';
 
 // HOOKS
 import { usePathname, useRouter } from 'next/navigation';
 import { useTranslation } from 'react-i18next';
-import { cn } from '@/lib/utils';
 
 const LanguageToggle = () => {
   /* Hooks */
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation('site');
   const currentLocale = i18n.language;
   const currentPathname = usePathname();
   const router = useRouter();
+
+  /* Constants */
+  const otherLocale = currentLocale === 'en' ? 'pt-BR' : 'en';
+  const Flag = otherLocale === 'pt-BR' ? Icons.brazil : Icons.usa;
 
   /* Handlers */
   const handleChange = (newLocale: string) => {
@@ -39,23 +41,15 @@ const LanguageToggle = () => {
 
   /* Render */
   return (
-    <Button variant="ghost" size="icon">
-      <Icons.brazil
-        className={cn('h-6 w-6', currentLocale === 'pt-BR' && 'hidden')}
-        onClick={() => handleChange('pt-BR')}
-      />
-      <span className="sr-only">pt-BR</span>
-
-      <Icons.usa
-        className={cn('h-6 w-6', currentLocale === 'en' && 'hidden')}
-        onClick={() => handleChange('en')}
-      />
-      <span className="sr-only">en-US</span>
-
-      {/* <Sun className="h-[1.5rem] w-[1.3rem] dark:hidden" />
-      <Moon className="hidden h-5 w-5 dark:block" /> */}
-      <span className="sr-only">Toggle theme</span>
-    </Button>
+    <button
+      type="button"
+      lang={otherLocale}
+      onClick={() => handleChange(otherLocale)}
+      className="flex items-center gap-2 underline-offset-[6px] hover:underline hover:decoration-2"
+    >
+      <Flag aria-hidden className="h-6 w-6" />
+      {t('language-switch')}
+    </button>
   );
 };
 

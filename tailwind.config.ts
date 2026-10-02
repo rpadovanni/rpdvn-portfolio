@@ -25,6 +25,17 @@ const config = {
       '8': '8px',
     },
     extend: {
+      colors: {
+        ground: 'var(--ground)',
+        surface: 'var(--surface)',
+        ink: 'var(--ink)',
+        'ink-soft': 'var(--ink-soft)',
+        rule: 'var(--rule)',
+        action: 'var(--action)',
+        'action-ink': 'var(--action-ink)',
+        band: 'var(--band)',
+        'band-ink': 'var(--band-ink)',
+      },
       backgroundImage: {
         'project-image': "url('/project-bg.svg')",
         'footer-texture': "url('/img/footer-texture.png')",

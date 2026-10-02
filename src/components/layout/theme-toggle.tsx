@@ -3,21 +3,21 @@
 import * as React from 'react';
 import { Moon, Sun } from 'lucide-react';
 import { useTheme } from 'next-themes';
-
-import { Button } from '@/components/ui/button';
+import { useTranslation } from 'react-i18next';
 
 export function ThemeToggle() {
-  const { setTheme, theme } = useTheme();
+  const { setTheme, resolvedTheme } = useTheme();
+  const { t } = useTranslation('site');
 
   return (
-    <Button
-      variant="ghost"
-      size="icon"
-      onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+    <button
+      type="button"
+      onClick={() => setTheme(resolvedTheme === 'light' ? 'dark' : 'light')}
+      className="-mr-2 flex h-10 w-10 items-center justify-center hover:bg-action hover:text-action-ink"
     >
-      <Sun className="h-[1.5rem] w-[1.3rem] dark:hidden" />
+      <Sun className="h-5 w-5 dark:hidden" />
       <Moon className="hidden h-5 w-5 dark:block" />
-      <span className="sr-only">Toggle theme</span>
-    </Button>
+      <span className="sr-only">{t('theme-toggle')}</span>
+    </button>
   );
 }

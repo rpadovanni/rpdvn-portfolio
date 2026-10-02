@@ -32,7 +32,7 @@ export const viewport: Viewport = {
   ],
 };
 
-const i18nNamespaces = ['home', 'site'];
+const i18nNamespaces = ['site'];
 
 export function generateStaticParams() {
   return i18nConfig.locales.map(locale => ({ locale }));
